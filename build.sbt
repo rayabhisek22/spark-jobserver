@@ -198,6 +198,10 @@ lazy val commonSettings = Defaults.coreDefaultSettings ++ dirSettings ++ Seq(
   ),
   // For Building on Encrypted File Systems...
   scalacOptions ++= Seq("-Xmax-classfile-name", "128"),
+  resolvers ++= Seq(
+    "Typesafe" at "http://repo.typesafe.com/typesafe/releases/",
+    "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
+),
   resolvers ++= Dependencies.repos,
   libraryDependencies ++= apiDeps,
   Test / parallelExecution := false,
