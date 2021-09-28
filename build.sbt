@@ -200,7 +200,8 @@ lazy val commonSettings = Defaults.coreDefaultSettings ++ dirSettings ++ Seq(
   scalacOptions ++= Seq("-Xmax-classfile-name", "128"),
   resolvers ++= Seq(
     "Typesafe" at "https://repo.typesafe.com/typesafe/releases/",
-    "Java.net Maven2 Repository" at "https://download.java.net/maven/2/"
+    "Java.net Maven2 Repository" at "https://download.java.net/maven/2/",
+    "Artifactory" at "https://sparkjobserver.jfrog.io/artifactory/jobserver/"
 ),
   resolvers ++= Dependencies.repos,
   libraryDependencies ++= apiDeps,
