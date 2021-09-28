@@ -1,8 +1,17 @@
 resolvers += Classpaths.sbtPluginReleases
 
-resolvers += "Typesafe Server" at "https://repo.typesafe.com/typesafe/releases"
+resolvers += "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/"
+
+resolvers ++= Seq(
+  "Typesafe" at "https://repo.typesafe.com/typesafe/releases/",
+  "Java.net Maven2 Repository" at "https://download.java.net/maven/2/",
+  "Artifactory" at "https://sparkjobserver.jfrog.io/artifactory/jobserver/",
+  "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/"
+)
 
 addSbtPlugin("com.github.sbt" % "sbt-pgp" % "2.1.2")
+
+addSbtPlugin("com.jsuereth" % "sbt-pgp" % "2.1.1")
 
 addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.3.4")
 

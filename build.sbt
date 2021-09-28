@@ -6,9 +6,16 @@ updateOptions := updateOptions.value.withCachedResolution(true)
 Global / transitiveClassifiers := Seq(Artifact.SourceClassifier)
 lazy val dirSettings = Seq()
 
-resolvers += "Typesafe Server" at "https://repo.typesafe.com/typesafe/releases"
+resolvers += "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/"
 
 resolvers += "Artifactory" at "https://sparkjobserver.jfrog.io/artifactory/jobserver/"
+
+resolvers ++= Seq(
+  "Typesafe" at "https://repo.typesafe.com/typesafe/releases/",
+  "Java.net Maven2 Repository" at "https://download.java.net/maven/2/",
+  "Artifactory" at "https://sparkjobserver.jfrog.io/artifactory/jobserver/",
+  "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/"
+)
 
 libraryDependencies += "spark.jobserver" %% "job-server-api" % "0.11.1" % "provided"
 
@@ -207,7 +214,8 @@ lazy val commonSettings = Defaults.coreDefaultSettings ++ dirSettings ++ Seq(
   resolvers ++= Seq(
     "Typesafe" at "https://repo.typesafe.com/typesafe/releases/",
     "Java.net Maven2 Repository" at "https://download.java.net/maven/2/",
-    "Artifactory" at "https://sparkjobserver.jfrog.io/artifactory/jobserver/"
+    "Artifactory" at "https://sparkjobserver.jfrog.io/artifactory/jobserver/",
+    "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/"
 ),
   resolvers ++= Dependencies.repos,
   libraryDependencies ++= apiDeps,
