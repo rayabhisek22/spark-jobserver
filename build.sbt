@@ -5,7 +5,7 @@ import Dependencies._
 updateOptions := updateOptions.value.withCachedResolution(true)
 Global / transitiveClassifiers := Seq(Artifact.SourceClassifier)
 lazy val dirSettings = Seq()
-
+resolvers += "Typesafe Server" at "https://repo.typesafe.com/typesafe/releases"
 lazy val akkaApp = Project(id = "akka-app", base = file("akka-app"))
   .settings(description := "Common Akka application stack: metrics, tracing, logging, and more.")
   .settings(commonSettings)

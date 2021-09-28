@@ -1,5 +1,9 @@
 resolvers += Classpaths.sbtPluginReleases
 
+resolvers += "Typesafe Server" at "https://repo.typesafe.com/typesafe/releases"
+
+addSbtPlugin("com.github.sbt" % "sbt-pgp" % "2.1.2")
+
 addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.3.4")
 
 addSbtPlugin("io.spray" % "sbt-revolver" % "0.9.1")       // For quick restarts for web development
