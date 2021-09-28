@@ -5,7 +5,13 @@ import Dependencies._
 updateOptions := updateOptions.value.withCachedResolution(true)
 Global / transitiveClassifiers := Seq(Artifact.SourceClassifier)
 lazy val dirSettings = Seq()
+
 resolvers += "Typesafe Server" at "https://repo.typesafe.com/typesafe/releases"
+
+resolvers += "Artifactory" at "https://sparkjobserver.jfrog.io/artifactory/jobserver/"
+
+libraryDependencies += "spark.jobserver" %% "job-server-api" % "0.11.1" % "provided"
+
 lazy val akkaApp = Project(id = "akka-app", base = file("akka-app"))
   .settings(description := "Common Akka application stack: metrics, tracing, logging, and more.")
   .settings(commonSettings)
